@@ -13,6 +13,10 @@ nmap -Pn --script vuln 10.0.0.0/24
 ```
 Zjistili jsme, že lokální síť ve virtuálním prostředí odpovídá topologii korporátní sítě.
 Na IP adresách **10.0.0.4, 10.0.0.5, 10.0.0.9, 10.0.0.11** se pouze nachází služba odpovídající **ms-rdp**.
+
+## Nástroj pro detekci útoků - MSFFinder
+Nástroj [**MSFFinder.py**](MSFFinder.py) hledá výskyt slovního spojení **powershell.exe** a **hidden** v tabulce **sysmon.csv**. Toto spojení předchází binární payload, určený k exploitaci cíle. Taktéž můžeme, z defaultního chování nástroje Metasploit, hledat v logu string o velikosti 20 znaku s příponou **.exe** nebo **.temp** naznačující přítomnost útočníka.
+
 ## Zpracování - časová závislost zpráv jednotlivých stanic
 > V pořadí: application.csv, security.csv, sysmon.csv, system.csv
 
